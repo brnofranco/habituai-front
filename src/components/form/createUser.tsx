@@ -12,19 +12,18 @@ import NameField, { nameYupValidations } from '../field/name';
 import PasswordField, { passwordYupValidations } from '../field/password';
 import FieldInput from '../layout/field';
 
-interface Values {
+interface FormInitialValues {
     name: string;
     email: string;
     password: string;
     passwordConfirmation: string;
-    idAvatar: number;
 }
 
 export default function CreateUserForm() {
     const navigate = useNavigate();
     const host = envs.userPath;
 
-    const formInitialValues: Values = { name: '', email: '', password: '', passwordConfirmation: '', idAvatar: 1 };
+    const formInitialValues: FormInitialValues = { name: '', email: '', password: '', passwordConfirmation: '' };
 
     const handleValidationSchema = Yup.object().shape({
         ...emailYupValidations,
@@ -33,10 +32,16 @@ export default function CreateUserForm() {
         ...confirmationPasswordYupValidations,
     });
 
-    const handleFormSubmit = async (values: Values, { setSubmitting }: FormikHelpers<Values>) => {
+    const handleFormSubmit = async (values: FormInitialValues, { setSubmitting }: FormikHelpers<FormInitialValues>) => {
         setSubmitting(true);
         try {
-            await makeRequest('POST', host, { data: values });
+            await makeRequest('POST', host, {
+                data: {
+                    name: values.name,
+                    email: values.email,
+                    password: values.password,
+                },
+            });
             navigate(paths.signIn);
         } catch (error: any) {
             if (error?.response?.status === 422) {
