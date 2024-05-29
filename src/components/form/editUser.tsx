@@ -18,7 +18,7 @@ interface Values {
     email?: string;
     password: string;
     passwordConfirmation: string;
-    idAvatar?: number;
+    avatarId?: number;
 }
 
 interface EditUserFormProps {
@@ -36,7 +36,7 @@ export default function EditUserForm({ setOpenEditUserModal, userData }: EditUse
         email: userData.email,
         password: '',
         passwordConfirmation: '',
-        idAvatar: userData.idAvatar,
+        avatarId: userData.avatarId,
     };
 
     const handleValidationSchema = Yup.object().shape({
@@ -53,10 +53,10 @@ export default function EditUserForm({ setOpenEditUserModal, userData }: EditUse
                 email: values.email !== formInitialValues.email ? values.email : undefined,
                 name: values.name !== formInitialValues.name ? values.name : undefined,
                 password: values.password ? values.password : undefined,
-                idAvatar: values.idAvatar ? Number(values.idAvatar) : undefined,
+                avatarId: values.avatarId ? Number(values.avatarId) : undefined,
             };
 
-            await makeRequestWithAuthorization('PUT', `${userPath}/${userData.id}`, { data });
+            await makeRequestWithAuthorization('PUT', userPath, { data });
 
             toast.success('Seus dados foram atualizados!');
             setUserHasUpdate(true);
@@ -117,10 +117,10 @@ export default function EditUserForm({ setOpenEditUserModal, userData }: EditUse
                             <div className="w-full xl:max-w-[720px] flex flex-wrap justify-between items-center gap-4">
                                 <RadioGroup
                                     row
-                                    name="idAvatar"
-                                    value={values.idAvatar}
+                                    name="avatarId"
+                                    value={values.avatarId}
                                     onChange={(event) => {
-                                        setFieldValue('idAvatar', event.currentTarget.value);
+                                        setFieldValue('avatarId', event.currentTarget.value);
                                     }}
                                     className="h-full w-full flex flex-wrap justify-center items-center"
                                 >

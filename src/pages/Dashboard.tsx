@@ -34,7 +34,7 @@ export interface User {
     name: string;
     email: string;
     experience: number;
-    idAvatar: number;
+    avatarId: number;
 }
 
 export interface HabitCategory {
@@ -65,7 +65,7 @@ interface DayList {
 }
 
 function Dashboard() {
-    const userHost = envs.userAccountPath;
+    const userHost = envs.userPath;
     const habitsHost = envs.habitWeekPath;
 
     const { habitsHasUpdate, setHabitsHasUpdate } = useUpdateHabits();
@@ -74,7 +74,7 @@ function Dashboard() {
     const [referenceDay, setReferenceDay] = useState(new Date());
     const weekDaysList = getWeekDaysList(referenceDay);
 
-    const [userData, setUserData] = useState<User>({ id: -1, name: '', email: '', experience: 0, idAvatar: 1 });
+    const [userData, setUserData] = useState<User>({ id: -1, name: '', email: '', experience: 0, avatarId: 1 });
     const [habitListFromServer, setHabitListFromServer] = useState<DayList[]>([]);
 
     const [isBadHabitsVisible, setIsBadHabitsVisible] = useState(false);

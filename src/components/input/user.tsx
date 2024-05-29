@@ -79,7 +79,7 @@ export default function UserMenu({
                 className="flex flex-col xl:flex-row items-center font-bold text-4xl xl:text-2xl gap-2"
             >
                 <img
-                    src={avatars[userData.idAvatar - 1]}
+                    src={avatars[userData.avatarId - 1]}
                     alt="avatar"
                     className="rounded-full h-40 w-40 xl:h-12 xl:w-12"
                 />
