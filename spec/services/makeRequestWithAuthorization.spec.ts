@@ -7,7 +7,7 @@ import { makeRequestWithAuthorization } from '../../src/services/makeRequestWith
 describe('makeRequestWithAuthorization', () => {
     beforeAll(() => {
         jest.spyOn(makeRequest, 'makeRequest').mockImplementation(() => Promise.resolve('data value'));
-        jest.spyOn(Cookies, 'get').mockImplementation(() => 'token value');
+        jest.spyOn(Cookies, 'get').mockImplementation(() => 'tokenValue');
     });
 
     it('should validate default values', async () => {
@@ -18,7 +18,7 @@ describe('makeRequestWithAuthorization', () => {
             data: {},
             params: {},
             headers: {
-                Authorization: 'token value',
+                Authorization: 'Bearer tokenValue',
             },
         });
     });
@@ -43,7 +43,7 @@ describe('makeRequestWithAuthorization', () => {
                 value: 1,
             },
             headers: {
-                Authorization: 'token value',
+                Authorization: 'Bearer tokenValue',
                 headerTest: true,
             },
         });

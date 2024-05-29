@@ -12,7 +12,7 @@ export async function makeRequestWithAuthorization(
         params,
         data,
         headers: {
-            Authorization: token,
+            Authorization: `Bearer ${token}`,
             ...headers,
         },
     });
