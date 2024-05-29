@@ -1,7 +1,7 @@
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Accordion, AccordionDetails, AccordionSummary, Grid } from '@mui/material';
 import { format, isToday, parseISO } from 'date-fns';
-import pt from 'date-fns/locale/pt';
+import { pt } from 'date-fns/locale';
 import { ReactElement, useState } from 'react';
 import { isMobile } from 'react-device-detect';
 
@@ -10,11 +10,9 @@ interface DayHabitTableLayoutProps {
     date: string;
 }
 
-export default function DayHabitTableLayout({ children, date }: DayHabitTableLayoutProps) {
+export default function DayHabitTableLayout({ children, date }: Readonly<DayHabitTableLayoutProps>) {
     const formattedDay = format(parseISO(date), 'dd/MM');
-    const dateName = format(parseISO(date), 'EEE', {
-        locale: pt,
-    });
+    const dateName = format(parseISO(date), 'EEE', { locale: pt });
     const today = isToday(parseISO(date));
     const [isExpanded, setIsExpanded] = useState(today || !isMobile);
 
