@@ -21,12 +21,25 @@ interface UserMenuProps {
     setOpenAchievementMural: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+interface CustomMenuItemProps {
+    title: string;
+    icon: ReactElement;
+    handleFn: () => void;
+}
+
+const CustomMenuItem = ({ title, icon, handleFn }: CustomMenuItemProps) => (
+    <MenuItem onClick={handleFn} className="flex items-center gap-2">
+        {icon}
+        {title}
+    </MenuItem>
+);
+
 export default function UserMenu({
     userData,
     setOpenEditUserModal,
     setOpenHabitDumpModal,
     setOpenAchievementMural,
-}: UserMenuProps) {
+}: Readonly<UserMenuProps>) {
     const { reportPath } = envs;
 
     const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
@@ -64,13 +77,6 @@ export default function UserMenu({
         setOpenHabitDumpModal(true);
         handleCloseMenu();
     };
-
-    const CustomMenuItem = ({ title, icon, handleFn }: { title: string; icon: ReactElement; handleFn: () => void }) => (
-        <MenuItem onClick={handleFn} className="flex items-center gap-2">
-            {icon}
-            {title}
-        </MenuItem>
-    );
 
     return (
         <>

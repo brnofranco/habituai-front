@@ -12,7 +12,7 @@ interface DeleteHabitModalProps {
     setHabitIdToBeDeleted: React.Dispatch<React.SetStateAction<number | null>>;
 }
 
-export default function DeleteHabitModal({ habitId, setHabitIdToBeDeleted }: DeleteHabitModalProps) {
+export default function DeleteHabitModal({ habitId, setHabitIdToBeDeleted }: Readonly<DeleteHabitModalProps>) {
     const { setHabitsHasUpdate } = useUpdateHabits();
     const [isLoading, setIsLoading] = useState<boolean>(false);
 

@@ -26,7 +26,7 @@ interface EditUserFormProps {
     setOpenEditUserModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function EditUserForm({ setOpenEditUserModal, userData }: EditUserFormProps) {
+export default function EditUserForm({ setOpenEditUserModal, userData }: Readonly<EditUserFormProps>) {
     const { userPath } = envs;
 
     const { setUserHasUpdate } = useUpdateUser();
@@ -125,7 +125,7 @@ export default function EditUserForm({ setOpenEditUserModal, userData }: EditUse
                                     className="h-full w-full flex flex-wrap justify-center items-center"
                                 >
                                     {avatars.map((avatar, index) => {
-                                        return <AvatarRadioButton key={index} value={index + 1} image={avatar} />;
+                                        return <AvatarRadioButton key={avatar} value={index + 1} image={avatar} />;
                                     })}
                                 </RadioGroup>
                             </div>

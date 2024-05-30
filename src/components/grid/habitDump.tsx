@@ -39,7 +39,7 @@ enum CategoryTranslation {
     'Outro' = 4,
 }
 
-export default function HabitDumpGrid({ setOpenHabitDumpModal }: HabitDumpGridProps) {
+export default function HabitDumpGrid({ setOpenHabitDumpModal }: Readonly<HabitDumpGridProps>) {
     const habitsHost = envs.habitPath;
 
     const { habitsHasUpdate, setHabitsHasUpdate } = useUpdateHabits();

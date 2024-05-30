@@ -8,7 +8,7 @@ interface NewPasswordFieldProps {
     error: boolean;
 }
 
-export default function NewPasswordField(props: NewPasswordFieldProps) {
+export default function NewPasswordField(props: Readonly<NewPasswordFieldProps>) {
     return <TextField id="password" label="Nova senha" variant="outlined" {...props} />;
 }
 

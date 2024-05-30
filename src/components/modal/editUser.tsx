@@ -8,7 +8,7 @@ interface EditUserModal {
     userData: User;
 }
 
-export default function EditUserModal({ openModal, setOpenModal, userData }: EditUserModal) {
+export default function EditUserModal({ openModal, setOpenModal, userData }: Readonly<EditUserModal>) {
     return (
         <BaseModal open={!!openModal} setOpen={setOpenModal}>
             <EditUserForm setOpenEditUserModal={setOpenModal} userData={userData} />

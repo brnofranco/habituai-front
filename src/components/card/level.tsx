@@ -4,7 +4,7 @@ interface LevelCardProps {
     experience: number;
 }
 
-export default function LevelCard({ experience }: LevelCardProps) {
+export default function LevelCard({ experience }: Readonly<LevelCardProps>) {
     const starColors = [
         '#ffffff',
         '#fff200',

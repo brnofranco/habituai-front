@@ -8,7 +8,7 @@ interface NameFieldProps {
     error: boolean;
 }
 
-export default function NameField(props: NameFieldProps) {
+export default function NameField(props: Readonly<NameFieldProps>) {
     return <TextField id="name" label="Nome/Apelido" variant="outlined" {...props} />;
 }
 

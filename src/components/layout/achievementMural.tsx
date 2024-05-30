@@ -19,7 +19,10 @@ interface AchievementMuralProps {
     setOpenAchievementMural: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function AchievementMural({ openAchievementMural, setOpenAchievementMural }: AchievementMuralProps) {
+export default function AchievementMural({
+    openAchievementMural,
+    setOpenAchievementMural,
+}: Readonly<AchievementMuralProps>) {
     const { achievementPath } = envs;
 
     const [achievements, setAchievements] = useState<[Achievement] | []>([]);

@@ -6,7 +6,7 @@ interface HabitDumpModalProps {
     setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function HabitDumpModal({ openModal, setOpenModal }: HabitDumpModalProps) {
+export default function HabitDumpModal({ openModal, setOpenModal }: Readonly<HabitDumpModalProps>) {
     return (
         <BaseModal open={!!openModal} setOpen={setOpenModal}>
             <HabitDumpGrid setOpenHabitDumpModal={setOpenModal} />

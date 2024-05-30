@@ -48,7 +48,7 @@ export default function HabitCard({
     streak,
     setHabitIdToBeDeleted,
     setHabitIdToBeUpdated,
-}: HabitCardProps) {
+}: Readonly<HabitCardProps>) {
     const host = envs.progressPath;
 
     const { description: categoryDescription } = category;

@@ -7,7 +7,7 @@ interface BaseModalProps {
     setOpen: React.Dispatch<React.SetStateAction<any>>;
 }
 
-export default function BaseModal({ children, open, setOpen }: BaseModalProps) {
+export default function BaseModal({ children, open, setOpen }: Readonly<BaseModalProps>) {
     const handleClose = () => setOpen(null);
 
     return (

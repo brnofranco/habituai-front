@@ -6,7 +6,7 @@ interface CreateHabitModalProps {
     setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function CreateHabitModal({ openModal, setOpenModal }: CreateHabitModalProps) {
+export default function CreateHabitModal({ openModal, setOpenModal }: Readonly<CreateHabitModalProps>) {
     return (
         <BaseModal open={openModal} setOpen={setOpenModal}>
             <CreateHabitForm setOpenCreateHabitModal={setOpenModal} />

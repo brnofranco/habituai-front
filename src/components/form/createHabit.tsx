@@ -66,7 +66,7 @@ interface CreateHabitFormProps {
     setOpenCreateHabitModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function CreateHabitForm({ setOpenCreateHabitModal }: CreateHabitFormProps) {
+export default function CreateHabitForm({ setOpenCreateHabitModal }: Readonly<CreateHabitFormProps>) {
     const host = envs.habitPath;
 
     const { setHabitsHasUpdate } = useUpdateHabits();
@@ -145,9 +145,9 @@ export default function CreateHabitForm({ setOpenCreateHabitModal }: CreateHabit
             {({ values, errors, isSubmitting, setFieldValue, handleChange }) => (
                 <Form className="w-full h-full flex justify-center items-center flex-col">
                     <div className="w-full flex justify-center items-center flex-col mb-8">
-                        <label className="w-full flex justify-center items-center flex-col text-3xl xl:text-4xl font-bold text-primaryDark">
+                        <h3 className="w-full flex justify-center items-center flex-col text-3xl xl:text-4xl font-bold text-primaryDark">
                             Você gostaria de
-                        </label>
+                        </h3>
 
                         <span className="text-red-600">
                             <ErrorMessage name="classification" />
@@ -182,7 +182,7 @@ export default function CreateHabitForm({ setOpenCreateHabitModal }: CreateHabit
                                         <ErrorMessage name="category" />
                                     </span>
 
-                                    <label className="font-bold text-lg xl:text-xl">Categoria</label>
+                                    <h4 className="font-bold text-lg xl:text-xl">Categoria</h4>
                                 </div>
 
                                 <RadioGroup
@@ -208,7 +208,7 @@ export default function CreateHabitForm({ setOpenCreateHabitModal }: CreateHabit
                                     <span className="text-red-600">
                                         <ErrorMessage name="weightExperience" />
                                     </span>
-                                    <label className="font-bold text-lg xl:text-xl">Importância em XP</label>
+                                    <h4 className="font-bold text-lg xl:text-xl">Importância em XP</h4>
                                 </div>
 
                                 <div className="w-full flex flex-col gap-2 justify-center items-center">
@@ -225,9 +225,7 @@ export default function CreateHabitForm({ setOpenCreateHabitModal }: CreateHabit
                             <div className="w-full flex flex-col gap-2 justify-center items-center">
                                 <div className="flex flex-col">
                                     {weekDaysHasError && <p className="text-red-600">*Obrigatório</p>}
-                                    <label className="font-bold text-lg xl:text-xl">
-                                        Dias da semana que serão feitos
-                                    </label>
+                                    <h4 className="font-bold text-lg xl:text-xl">Dias da semana que serão feitos</h4>
                                 </div>
 
                                 <FormControl>

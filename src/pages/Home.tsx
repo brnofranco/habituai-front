@@ -15,8 +15,7 @@ function Home() {
             <section className="w-full h-screen flex flex-col">
                 <header className="w-full flex justify-between py-4 px-32 bg-primaryDark shadow-md">
                     <h1 className="flex items-center gap-2 text-5xl text-secondaryExtraLight font-bold">
-                        <img src={checkBoxIcon} alt="logo" className="w-10 h-10" />
-                        Habituaí
+                        <img src={checkBoxIcon} alt="logo" className="w-10 h-10" /> Habituaí
                     </h1>
 
                     <nav className="flex items-center gap-12 text-gray-100">
@@ -57,7 +56,7 @@ function Home() {
                     </div>
 
                     <div className="w-full flex flex-1 flex-col">
-                        <img src={systemImage} className="drop-shadow-md" />
+                        <img src={systemImage} alt="Exemplo do sistema" className="drop-shadow-md" />
                     </div>
                 </div>
 
@@ -112,8 +111,7 @@ function Home() {
                             }
                         >
                             <h1 className="flex items-center gap-2 text-4xl text-secondaryExtraLight font-bold">
-                                <img src={checkBoxIcon} alt="logo" className="w-10 h-10" />
-                                Habituaí
+                                <img src={checkBoxIcon} alt="logo" className="w-10 h-10" /> Habituaí
                             </h1>
                         </AccordionSummary>
                         <AccordionDetails>
@@ -157,7 +155,7 @@ function Home() {
                     </div>
 
                     <div className="w-full flex flex-1 flex-col mt-8 md:mt-0">
-                        <img src={systemImage} className="drop-shadow-md" />
+                        <img src={systemImage} alt="Exemplo do sistema" className="drop-shadow-md" />
                     </div>
                 </div>
 

@@ -5,7 +5,7 @@ interface BadHabitToggleProps {
     setIsBadHabitsVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function BadHabitToggle({ isBadHabitsVisible, setIsBadHabitsVisible }: BadHabitToggleProps) {
+export default function BadHabitToggle({ isBadHabitsVisible, setIsBadHabitsVisible }: Readonly<BadHabitToggleProps>) {
     const handleChangeToggle = () => setIsBadHabitsVisible(!isBadHabitsVisible);
 
     return (

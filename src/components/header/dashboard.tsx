@@ -59,8 +59,7 @@ export default function DashboardHeader({
         <header className="w-full py-4 xl:px-9 flex justify-center bg-primaryDark shadow-xl">
             <nav className="w-full flex flex-col xl:flex-row items-center justify-between gap-4 xl:gap-0">
                 <span className="flex items-center gap-2 text-4xl text-secondaryExtraLight font-bold">
-                    <img src={checkBoxIcon} alt="logo" className="w-8 h-8" />
-                    Habituaí
+                    <img src={checkBoxIcon} alt="logo" className="w-8 h-8" /> Habituaí
                 </span>
 
                 <div className="flex justify-end items-center gap-6 text-white text-xl">
@@ -111,8 +110,7 @@ export default function DashboardHeader({
                     expandIcon={<Hamburger color="#12b52f" toggled={isAccordionOpen} toggle={setIsAccordionOpen} />}
                 >
                     <span className="flex items-center gap-2 text-4xl text-secondaryExtraLight font-bold">
-                        <img src={checkBoxIcon} alt="logo" className="w-8 h-8" />
-                        Habituaí
+                        <img src={checkBoxIcon} alt="logo" className="w-8 h-8" /> Habituaí
                     </span>
                 </AccordionSummary>
                 <AccordionDetails

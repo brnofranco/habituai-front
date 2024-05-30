@@ -6,7 +6,7 @@ interface AchievementMuralProps {
     setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function AchievementMuralModal({ openModal, setOpenModal }: AchievementMuralProps) {
+export default function AchievementMuralModal({ openModal, setOpenModal }: Readonly<AchievementMuralProps>) {
     return (
         <BaseModal open={!!openModal} setOpen={setOpenModal}>
             <AchievementMural openAchievementMural={openModal} setOpenAchievementMural={setOpenModal} />

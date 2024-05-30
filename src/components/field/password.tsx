@@ -8,7 +8,7 @@ interface PasswordFieldProps {
     error: boolean;
 }
 
-export default function PasswordField(props: PasswordFieldProps) {
+export default function PasswordField(props: Readonly<PasswordFieldProps>) {
     return <TextField id="password" label="Senha" variant="outlined" {...props} />;
 }
 

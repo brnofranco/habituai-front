@@ -6,7 +6,7 @@ interface EditHabitModalProps {
     setHabitIdToBeUpdated: React.Dispatch<React.SetStateAction<number | null>>;
 }
 
-export default function EditHabitModal({ habitId, setHabitIdToBeUpdated }: EditHabitModalProps) {
+export default function EditHabitModal({ habitId, setHabitIdToBeUpdated }: Readonly<EditHabitModalProps>) {
     return (
         <BaseModal open={!!habitId} setOpen={setHabitIdToBeUpdated}>
             <EditHabitForm habitId={habitId} setHabitIdToBeUpdated={setHabitIdToBeUpdated} />

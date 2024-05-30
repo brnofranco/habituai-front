@@ -8,7 +8,7 @@ interface HabitNameFieldProps {
     error: boolean;
 }
 
-export default function HabitNameField(props: HabitNameFieldProps) {
+export default function HabitNameField(props: Readonly<HabitNameFieldProps>) {
     return <TextField id="name" label="Nome do hábito*" variant="outlined" {...props} />;
 }
 

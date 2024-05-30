@@ -8,7 +8,7 @@ interface EmailFieldProps {
     error: boolean;
 }
 
-export default function EmailField(props: EmailFieldProps) {
+export default function EmailField(props: Readonly<EmailFieldProps>) {
     return <TextField id="email" label="Email" variant="outlined" {...props} />;
 }
 

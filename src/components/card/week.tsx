@@ -8,7 +8,11 @@ interface WeekSelectorCardProps {
     handleAddWeek: () => void;
 }
 
-export default function WeekSelectorCard({ weekDaysList, handleSubWeek, handleAddWeek }: WeekSelectorCardProps) {
+export default function WeekSelectorCard({
+    weekDaysList,
+    handleSubWeek,
+    handleAddWeek,
+}: Readonly<WeekSelectorCardProps>) {
     return (
         <div className="w-full xl:w-auto flex items-center justify-between xl:justify-center gap-2 text-white py-2 px-4 bg-primaryExtraLight rounded-xl shadow-md">
             <button onClick={handleSubWeek}>

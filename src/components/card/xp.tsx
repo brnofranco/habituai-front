@@ -2,7 +2,7 @@ interface ExperienceCardProps {
     experience: number;
 }
 
-export default function ExperienceCard({ experience }: ExperienceCardProps) {
+export default function ExperienceCard({ experience }: Readonly<ExperienceCardProps>) {
     const xp = experience > 0 ? experience : 0;
 
     return (

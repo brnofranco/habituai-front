@@ -1,5 +1,5 @@
-import { ErrorMessage, Field } from 'formik';
 import { ReactElement } from 'react';
+import { Field, ErrorMessage } from 'formik';
 
 interface FieldComponentProps {
     name: string;
@@ -15,7 +15,7 @@ interface FieldInputProps {
     hasError: boolean;
 }
 
-export default function FieldInput({ fieldComponent, name, type, hasError }: FieldInputProps) {
+export default function FieldInput({ fieldComponent, name, type, hasError }: Readonly<FieldInputProps>) {
     return (
         <div className="w-full flex flex-col">
             <Field as={fieldComponent} name={name} type={type} error={hasError} />

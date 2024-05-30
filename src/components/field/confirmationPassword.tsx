@@ -8,7 +8,7 @@ interface PasswordFieldProps {
     error: boolean;
 }
 
-export default function ConfirmationPasswordField(props: PasswordFieldProps) {
+export default function ConfirmationPasswordField(props: Readonly<PasswordFieldProps>) {
     return <TextField id="passwordConfirmation" label="Confirme sua senha" variant="outlined" {...props} />;
 }
 

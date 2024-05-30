@@ -4,7 +4,7 @@ interface SignHeaderLayoutProps {
     imageSrc: string;
 }
 
-export default function SignHeaderLayout({ imageSrc }: SignHeaderLayoutProps) {
+export default function SignHeaderLayout({ imageSrc }: Readonly<SignHeaderLayoutProps>) {
     const messageList = [
         'Não perca tempo e comece a ser uma pessoa melhor',
         'Não deixe para amanhã o que você pode fazer hoje',
@@ -22,7 +22,11 @@ export default function SignHeaderLayout({ imageSrc }: SignHeaderLayoutProps) {
         <div className="w-3/4 flex flex-col justify-center items-center gap-6 xl:gap-10">
             <h1 className="text-5xl xl:text-6xl text-secondaryLight font-bold drop-shadow-md">Habituaí</h1>
 
-            <img src={imageSrc} className="w-3/4 drop-shadow-xl max-w-[400px] xl:max-w-[400px]" />
+            <img
+                src={imageSrc}
+                alt="Pessoa trabalhando"
+                className="w-3/4 drop-shadow-xl max-w-[400px] xl:max-w-[400px]"
+            />
 
             <span className="text-gray-900 text-md xl:text-2xl text-center">"{messageList[randomIndex]}"</span>
         </div>
